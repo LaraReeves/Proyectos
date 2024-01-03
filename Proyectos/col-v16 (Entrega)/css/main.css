@@ -1,0 +1,206 @@
+/*----------------------------------------------------------------*/
+/* Hoja de estilos                                                */
+/*----------------------------------------------------------------*/
+/* Fuente para toda la página */
+/** {font-family: 'Courier New', Courier, monospace;}*/
+* {font-family: sans-serif;}
+
+
+/*----------------------------------------------------------------*/
+/* Definimos el contenedor grid                                   */
+/*----------------------------------------------------------------*/
+
+.container {
+    display: grid;
+
+    /* Uso un atajo para definir tres filas / tres columnas */
+    grid-template: 0 auto 0 / auto 10rem 9rem ; 
+
+    /* Distribuimos el contenido en cada fila */
+    grid-template-areas:"header header header" 
+                        "contenido izq der" 
+                        "pie pie pie";
+
+    /* separamos los items con gap */
+    gap: 0;
+
+    /* Hacemos que el diseño ocupe casi el alto total del navegador */
+    /* height: 90vh; */
+}
+
+.contenedor2 {
+    display: grid;
+
+    /* Uso un atajo para definir tres filas / tres columnas */
+    grid-template: 20rem 1fr 20rem / 9.3rem auto 9.3rem ; 
+
+    /* Distribuimos el contenido en cada fila */
+    grid-template-areas:"header header header" 
+                        "izq main der" 
+                        "pie pie pie";
+
+    /* separamos los items con gap */
+    gap: 3rem;
+} 
+
+.contenedor {
+display: grid;
+
+/* Uso un atajo para definir tres filas / tres columnas */
+grid-template: 20rem 1fr 20rem / 9.3rem auto 9.3rem ; 
+
+/* Distribuimos el contenido en cada fila */
+grid-template-areas:"header header header" 
+                    "izq contenido der" 
+                    "pie pie pie";
+
+/* separamos los items con gap */
+gap: 3rem;
+} 
+
+
+/*----------------------------------------------------------------*/
+/* Defino el nombre y color de cada area del grid                 */
+/*----------------------------------------------------------------*/
+.header    { grid-area: header;}
+.izq       { grid-area: izq;}
+.der       { grid-area: der;}
+.contenido { grid-area: contenido;}
+.pie       { grid-area: pie;}
+
+
+/*----------------------------------------------------------------*/
+/* Definimos la apariencia de cada item del grid                  */
+/*----------------------------------------------------------------*/
+.item {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+/*----------------------------------------------------------------*/
+/* Imagen con bordes redondeados, con limites de tamaño           */
+/*----------------------------------------------------------------*/
+img {
+    border-radius: 30px;
+    width: 100%;
+    max-width:400px;
+}
+
+
+/*----------------------------------------------------------------*/
+/* Punto de corte para pantallas tipo tablet                      */
+/*----------------------------------------------------------------*/
+@media only screen and (max-width: 1280px) {
+    .container{
+        grid-template-columns: auto auto;
+        grid-template-rows: 1rem auto;
+    }
+    .container .izq{
+        margin-top: 50px;
+        width: fit-content;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        /* Uso un atajo para definir 4 filas / 2 columna */
+        grid-template: auto auto / 1rem; 
+
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "contenido" "pie";
+    }
+    .izq{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        /* Uso un atajo para definir 4 filas / 2 columna */
+        grid-template: 100px auto auto 60px / auto; 
+
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "header header" "izq contenido" "der der" "pie pie";
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .contenedor {
+        grid-template: 10rem auto 25rem / auto auto auto;
+    }
+    .contenedor .main {
+        position: absolute;
+        margin-top: 5rem;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .contenedor {
+        grid-template: 35rem 35rem / auto auto auto;
+    }
+    .contenedor .main {
+        position: absolute;
+        margin-top: 1rem;
+    }
+}
+
+/*----------------------------------------------------------------*/
+/* Punto de corte para pantallas tipo celular                     */
+/*----------------------------------------------------------------*/
+@media only screen and (max-width: 600px) {
+    .container {
+        /* Uso un atajo para definir 6 filas / 1 columna */
+        grid-template: 100px auto auto auto 100px  / 100%; 
+
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "header" "izq" "contenido" "der" "pie";
+    }
+}
+/*----------------------------------------------------------------*/
+/* Punto de corte para pantallas tipo tablet                      */
+/*----------------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+    .contenedor2{
+        /* Uso un atajo para definir 4 filas / 2 columna */
+        
+        grid-template: auto auto auto auto / 1rem; 
+
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "contenido" "pie";
+    }
+    .izq{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .contenedor2 {
+        /* Uso un atajo para definir 4 filas / 2 columna */
+        grid-template: 100px auto auto 60px / auto; 
+
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "header header" "izq contenido" "der der" "pie pie";
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .contenedor2 {
+        grid-template: 10rem auto 25rem / auto auto auto;
+    }
+    .contenedor2 .main {
+        position: absolute;
+        margin-top: 5rem;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .contenedor2 {
+        grid-template: 35rem 35rem / auto auto auto;
+    }
+    .contenedor2 .main {
+        position: absolute;
+        margin-top: 1rem;
+    }
+}

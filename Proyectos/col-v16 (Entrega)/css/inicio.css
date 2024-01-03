@@ -1,0 +1,817 @@
+*{
+    box-sizing: border-box;
+}
+html {
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: #F0F8FF;
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.fromulario__label{
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.formulario__grupo-input{
+    position: relative;
+}
+
+.formulario__input{
+    width: 100%;
+}
+input[type="date"]{
+    width:400px;
+    white-space: pre;
+}
+   /* placeholder de espacios en blanco */
+input[type="date"]::before{
+    content: attr(placeholder) "                                                                        ";
+}
+   /* Cuando se enfoca que no esten los espacios en blanco */
+input[type="date"]:focus::before {
+    content: "" !important;
+}
+
+.formulario__input-error{
+    font-size: 10px;
+    color: #fff;
+    display: none;
+}
+
+.formulario__input-error-activo{
+    display: block;
+}
+
+.formulario__validacion-estado{
+    position:absolute;
+    right: 1rem;  
+    top:0.5rem;
+    z-index: 100;
+    opacity: 0;
+}
+
+/*Validadción -  Si está correcto el input*/
+.formulario__grupo-correcto .formulario__validacion-estado{
+color:#00FF00;
+opacity: 1;
+}
+
+/* Validadción -  Si esta incorrecto el input*/
+.formulario__grupo-incorrecto .formulario__validacion-estado{
+    color:#AF3D3D;;
+    opacity: 1;
+    }
+
+.forumlario__checkbox{
+    margin-right: 1rem;
+}
+
+.formulario__grupo-treminos,
+.formulario__mensaje
+{
+    grid-column: span 2;
+}
+
+.lblTermCond{
+    color: #fff;
+}
+.formulario__mensaje{
+    height: 2rem;
+    line-height: 2rem;
+    background-color: #AF3D3D;
+    color: #fff;
+    padding: 0 1rem;
+    border-radius: 3px;
+    display: none;
+}
+.formulario__mensaje--activo{
+    display: block;
+}
+.formulario__mensaje p{
+    margin: 0;
+
+}
+
+header {
+    margin-top: 0;
+    width: 100%;
+}
+
+header nav {
+    width: 100%;
+    max-width: 100%;
+    margin: 0px auto;
+    background: #003153;
+}
+
+.menu_bar {
+    display: none;
+    background: #003153;
+}
+
+header nav ul {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+header nav ul li {
+    float: left;
+}
+
+header nav ul li a {
+    color: #fff;
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+}
+
+header nav ul li span {
+    margin-right: 10px;
+}
+
+header nav ul li a:hover {
+    background: #4376be;
+}
+
+section {
+    padding: 20px;
+}
+
+/*Fin Menu Principal*/
+
+.mb-1 .user-box {
+    background-color: transparent;
+}
+
+.logoFooter{
+    float:right;
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+}
+
+
+header nav ul li .empresa {
+    color: #fff;
+    translate: 40rem;
+    z-index: 2;
+}
+
+.logo{
+    float:right;
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    z-index: 0;
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 380px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box .inputGeneral {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+
+.login-box .user-box .lblGeneral{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box .lblEsProfesional{
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    padding: 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box input:focus ~ .lblGeneral,
+.login-box .user-box input:valid ~ .lblGeneral {
+    top: -20px;
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+}
+
+.login-box form .btnEnviar, .botton {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+
+.login-box .btnEnviar:hover , .botton:hover {
+    background: #c7ebff;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #c7ebff,
+                0 0 25px #c7ebff,
+                0 0 50px #c7ebff,
+                0 0 100px #c7ebff;
+}
+
+select,
+option {
+    color: rgba(0,0,0,.5);  /* cambio el color de la letra del combo sino no se*/
+
+}
+.login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c7ebff);
+    animation: btn-anim1 1s linear infinite;
+}
+    
+.sectionPpl{
+    float: left;   
+    width: 61%;
+    padding: 2%;
+    margin-right: 5%;    
+    position: relative;
+}
+
+.asidePpl {  
+    left :64rem;
+    height: 45.8rem;
+    width: 20%;   
+    position: absolute;
+    top: 5.5rem;
+    margin-top: 1rem;
+    padding: 1%;   
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.6);
+
+}
+
+.ckEsProfesional{
+    float: left;
+}
+
+.izq{
+    position: relative;
+    margin-top: 15%;
+    margin-right: 10%;
+    width: fit-content;
+}
+.iframeMapa{
+    border-radius: 6px;
+}
+
+.main .user-box {
+    position: relative;
+}
+
+.main .user-box .inputGeneral {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+/********************************************/
+/*                   Registro paciente/medico  */
+/********************************************/
+.main {
+    position: absolute;
+    max-width:52.5rem;
+    width: 90%;
+    margin: 1rem auto auto auto;
+    padding: 2rem;
+    top: 50%;
+    left: 50%;   
+    height:auto;  
+    padding: 2.5rem;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.main .forumlario__grupo {
+    position: relative;
+}
+
+.main .forumlario__grupo .formulario__input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+
+.main .forumlario__grupo .fromulario__label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.main .forumlario__grupo input:focus ~ .fromulario__label,
+.main .forumlario__grupo input:valid ~ .fromulario__label {
+    top: -20px;
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+}
+
+.main form label a{
+    position: absolute;
+    margin-right: 0px;
+    display: inline-block;
+    padding: 0px 4px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration:underline;
+    text-transform: none;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 0px;
+    letter-spacing: normal;
+}
+.main label a:hover {
+    background: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 0px;
+    box-shadow: none
+}
+
+.main form a, .botton {
+    position: relative;
+    margin-right: 2rem;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+
+.main a:hover , .botton:hover {
+    background: #c7ebff;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #c7ebff,
+                0 0 25px #c7ebff,
+                0 0 50px #c7ebff,
+                0 0 100px #c7ebff;
+}
+
+.main a span {
+    position: absolute;
+    display: block;
+}
+
+select,
+option {
+    color: rgba(0,0,0,.5);  /* cambio el color de la letra del combo sino no se*/
+
+}
+.main a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c7ebff);
+    animation: btn-anim1 1s linear infinite;
+}
+.main .forumlario__grupo .lblTermCond{
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    padding: 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.ckTermCond{
+    float: left;
+}
+/********************************************/
+/*            FIN Registro paciente/medico     */
+/********************************************/
+
+/********************************************/
+/*                       Modal Legales          */
+/********************************************/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+  /* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+  /* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/********************************************/
+/*                       FIN Pie de Modal          */
+/********************************************/
+
+/********************************************/
+/*                         Pie de Pagina                                    */
+/********************************************/
+.piePagina{
+    font-family: 'Open Sans';
+    color: white;
+    width: 100%; 
+    position:relative; /*Para que el footer quede anclado abajo de todo*/
+    left:0px;
+    bottom:0px;
+    background-color: #003153; 
+    border-radius: 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerSocialLinks .footerMenuContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.iconoRed{
+    color: white;
+    background-position: center;
+    background-size: 40%;
+    margin: 1rem;
+}
+
+.iconoRed:hover{
+    color: #121212;
+    filter: invert(1);
+}
+
+.footerMenuContainer{
+    list-style-type: none;
+    color: #f2f2f2;
+    font-size: 0.7rem;
+    padding: 0;
+}
+
+.menuItem{
+    margin: 1rem 1.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.menuItem:hover{
+    opacity: 1;
+}
+
+.copyright{
+    opacity: 0.3;
+    text-align: center;
+}
+/********************************************/
+/*                       FIN Pie de Pagina          */
+/********************************************/
+
+/********************************************/
+/*                       publi Pagina Principal  */
+/********************************************/
+
+.slider-frame {
+    width: 300px;
+    height: 300px;
+    margin: 25% 100% 0;
+    overflow: hidden;
+}
+
+.slider-frame ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    
+    animation: slide 40s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider-frame img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+@keyframes slide {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+/********************************************/
+/*                       Cards Pagina Principal  */
+/********************************************/
+
+.card img{
+    height: 260px;
+    width:  220px;
+    padding-right: 15px;
+    float: left;
+    border-radius: 8px;
+}
+
+.card{
+    width: 60rem;
+    height: 13rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgb(255, 255, 255);
+    overflow: hidden;
+    margin: 20px;
+    text-align: left;
+    transition: all 0.25s;
+    box-shadow: 0 10px 20px rgba(0,0,0,.6);
+    background-color: #fff;
+}
+
+.card:hover{
+    transform:translate(-1rem);
+    box-shadow: 0  0.5rem 1rem rgba(0,0,0,.6);
+}
+
+.card h4{
+    font-weight: 600;
+}
+
+.card p{
+padding: 0  1em;
+
+}
+
+.card a{
+    text-decoration: none;
+    font-weight: 300;
+    color: #3e85ac;
+    
+}
+
+.card a:visited{
+    color:rgb(145, 30, 145);
+}
+
+.cards {
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    color: #fff;
+}
+
+/*************************************************************************/
+/*                                            Terminos y condiciones*/
+/*************************************************************************/
+.d-flex > div { 
+    color: white;
+    background-color: rgba(0,0,0,.6);
+    margin: 10px;
+    padding: 20px;
+    font-size: 1rem;
+    width: max-content;
+}
+
+/*************************************************************************/
+/*                                            Responsive para celulares*/
+/*************************************************************************/
+@media only screen and (max-width: 600px){
+    .container {
+        /*flex-direction: column;      */
+        display: flex;   
+        align-items:left;
+    }
+
+.card img{     
+        padding: 3rem;
+
+}
+.card{
+        width: 20rem;
+        height: 40rem;     
+        font-size: 12px;
+        display: inline-block;
+        vertical-align:bottom;     
+        
+    }   
+
+    .card h4{
+        display: inline-block;    
+        font-size: 14px;
+        padding: 1rem; 
+    }
+
+    .asidePpl{
+        display: none
+    }
+    .piePagina {
+        z-index: 2;
+    }
+
+    .izq{
+        display: none !important;
+    }
+}
+
+    @media only screen and (max-width: 800px) {
+        .card{
+            width: 20rem;
+            height: 40rem;     
+            font-size: 12px;
+            display: inline-block;
+            vertical-align:bottom;    
+        } 
+        .piePagina {
+            z-index: 2;
+        }  
+
+        header nav {
+            width: 80%;
+            height: auto;
+            left: -100%;
+            margin: 0;
+            position: absolute;
+            z-index: 1;
+        }
+        header nav ul li {
+            display: block;
+            float: none;
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+        }
+        .menu_bar {
+            display: block;
+            width: 100%;
+            background-color: #003153;
+        }
+        .menu_bar .bt-menu {
+            display: block;
+            padding: 20px;
+            background: #003153;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 25px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .menu_bar span {
+            float: right;
+            font-size: 40px;
+        }
+        .logo{
+        display: none;
+        }
+
+        .izq 
+        {
+        display:none  !important;
+        }
+
+        .formulario{
+            grid-template-columns: 1fr;
+        }
+        .formulario__grupo-treminos,
+        .formulario__mensaje{
+            grid-column: 1;
+        }
+    }
+
+    @media only screen and (max-width: 1420px) {
+        header nav ul li .empresa {
+            color: #003153;
+        }
+    }
+
